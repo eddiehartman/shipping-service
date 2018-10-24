@@ -1,6 +1,6 @@
-applications:
-    - name: shipping-service-js-NNN
-        memory: 256M
-        instances: 1
-        env:
-            MICROS_PRODUCTS_URL: "product-service-java.eu-gb.mybluemix.net/products"
+    applications:
+        - name: shipping-service-js-NNN
+            memory: 256M
+            instances: 1
+            env:
+                MICROS_PRODUCTS_URL: "product-service-java.eu-gb.mybluemix.net/products"
