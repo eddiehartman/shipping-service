@@ -1,5 +1,5 @@
     applications:
-        - name: shipping-service-js-NNN
+        - name: shipping-service-js-eddie
             memory: 256M
             instances: 1
             env:
