@@ -1,6 +1,0 @@
-    applications:
-        - name: shipping-service-js-eddie
-            memory: 256M
-            instances: 1
-            env:
-                MICROS_PRODUCTS_URL: "product-service-java.eu-gb.mybluemix.net/products"
