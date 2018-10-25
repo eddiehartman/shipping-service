@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: shipping-service-eddie
+  name: shipping-service-eddie
+  namespace: lab-london
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shipping-service-eddie
+    spec:
+      containers:
+      - image: mycluster.icp:8500/lab-london/shipping-service-eddie:v1.0.0
+        name: shipping-service-eddie
+        env:
+        - name: MICROS_PRODUCTS_URL
+          value: product-service-java.eu-gb.mybluemix.net/products
+        ports:
+        - containerPort: 3001
+          protocol: TCP
