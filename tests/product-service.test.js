@@ -3,10 +3,13 @@ var chai = require('chai')
 var expect = chai.expect
 var productService = require('../src/services/product-service')
 var nock = require('nock')
+let URL = process.env['MICROS_PRODUCTS_URL'] || 'mycluster.icp:8899/products';
+
 
 describe('Product service', function () {
+
   it('Should call remote service', async function () {
-    nock('https://mycluster.icp:8899/products')
+    nock(`https://${URL}`)
       .get('/13')
       .delayBody(10)
       .reply(200, {
@@ -19,7 +22,7 @@ describe('Product service', function () {
   })
 
   it('Should handle unexpected response structure', async function () {
-    nock('https://mycluster.icp:8899/products')
+    nock(`https://${URL}`)
       .get('/19')
       .reply(200, {
         res: 15.5
